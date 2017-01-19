@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'usuarios:cadastro' %}" class="form-signin" method="post">
+  {% csrf_token %}
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <label>First name</label>  
+  {{ form.first_name}}
+  {{ form.first_name.errors}}
+  <label>Last name</label>  
+  {{ form.last_name}}
+  {{ form.last_name.errors}}
+  <label>Email</label>  
+  {{ form.email}}
+  {{ form.email.errors}}
+  <label>Username</label>  
+  {{ form.username}}
+  {{ form.username.errors}}
+  <label>Password</label>  
+  {{ form.password}}
+  {{ form.password.errors}} 
+ 
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+
+{% endblock %}
+
